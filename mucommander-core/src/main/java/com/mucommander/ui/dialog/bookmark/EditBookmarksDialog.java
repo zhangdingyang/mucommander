@@ -266,8 +266,7 @@ public class EditBookmarksDialog extends FocusDialog implements ActionListener, 
      * <br>"music" -> "music (2)" if there already is bookmark with the "music" name
      * <br>"music (2)" -> "music (3)" and so on...
      */
-    private String getFreeNameVariation(String name) {
-
+    protected String getFreeNameVariation(String name) {
         if(!containsName(name))
             return name;
 
@@ -294,7 +293,7 @@ public class EditBookmarksDialog extends FocusDialog implements ActionListener, 
     /**
      * Returns true if the bookmarks list contains a bookmark that has the specified name.
      */
-    private boolean containsName(String name) {
+    protected boolean containsName(String name) {
         int nbBookmarks = bookmarks.size();
         for(int i=0; i<nbBookmarks; i++) {
             if(bookmarks.elementAt(i).getName().equals(name))
