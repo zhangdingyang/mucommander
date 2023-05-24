@@ -40,10 +40,10 @@ public class Translator {
     private static final Logger LOGGER = LoggerFactory.getLogger(Translator.class);
 
     /** List of all available languages in the dictionary file */
-    private static List<Locale> availableLanguages;
+    protected static List<Locale> availableLanguages;
 
-    private static ResourceBundle dictionaryBundle;
-    private static ResourceBundle languagesBundle;
+    protected static ResourceBundle dictionaryBundle;
+    protected static ResourceBundle languagesBundle;
 
     /**
      * Prevents instance creation.
