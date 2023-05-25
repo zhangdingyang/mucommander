@@ -72,7 +72,7 @@ public class Activator implements BundleActivator {
         serviceRegistration.unregister();
     }
 
-    static Locale loadLocale() {
+    public static Locale loadLocale() {
         String localeNameFromConf = MuConfigurations.getPreferences().getVariable(MuPreference.LANGUAGE);
         if (localeNameFromConf == null) {
             // language is not set in preferences, use system's language
@@ -87,12 +87,12 @@ public class Activator implements BundleActivator {
         return Locale.forLanguageTag(localeNameFromConf.replace('_', '-'));
     }
 
-    static ResourceBundle getDictionaryBundle(Locale locale) {
+    public static ResourceBundle getDictionaryBundle(Locale locale) {
         ResourceBundle resourceBundle= ResourceBundle.getBundle("dictionary", locale, utf8ResourceBundleControl);
         return new Activator.ResolveVariableResourceBundle(resourceBundle);
     }
 
-    static ResourceBundle getLanguageBundle(Locale locale) {
+    public static ResourceBundle getLanguageBundle(Locale locale) {
         return ResourceBundle.getBundle("languages", utf8ResourceBundleControl);
     }
 
